@@ -1,12 +1,20 @@
 <!DOCTYPE html>
+<!-- https://github.com/michalsnik/aos -->
+<!-- https://formspree.io/forms/xpzbeyyp/integration -->
 <html>
     <head>
     <title>VT Web</title>
     <meta name="author" content="Tan Voon Tao">
     <meta name="copyright" content="Tan Voon Tao">
     <meta name="keywords" content="Tan Voon Tao">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="fontawesome-free-5.15.1/css/all.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="style/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
     <!-- Adding a Favicon -->
     <!-- <link rel="icon" type="image/x-icon" href="../img/UI/logoPinocone.png">
@@ -22,7 +30,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="style/styles.css">
 
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
@@ -31,31 +39,19 @@
 </head>
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
 
-  <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-dark">
+  <div class="scene" id="loading">
+      <img src="imgs/rocket2.gif" alt="">
+  </div>
+
+  <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-dark" data-aos="slide-down">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="?">AllAboutMe</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#section1">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#section2">Project</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#section3">Contact</a>
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#section4">Resume</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#section5">Contact</a>
-          </li> -->
-          
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navItemLinks">
         </ul>
 
         <!-- <label class="switch">
@@ -63,7 +59,7 @@
           <span class="slider round"></span>
         </label> -->
         <!-- MAY can add sound toggle -->
-        <a class="btn btn-labeled btn-primary" href="imgs/test.pdf" role="button" download>
+        <a class="btn btn-labeled btn-primary" href="imgs/tanvoontao_resume.pdf" role="button" download>
             <span class="btn-label"><i class='bx bx-download'></i></span>
             Download resume
         </a>
@@ -74,22 +70,22 @@
   <div id="section1" class="container-fluid vt_con">
       <div class="row">
         <div class="col-lg-6 vt_landing_img">
-            <div class="container">
+            <div class="container" data-aos="fade-right">
                 <h1>
                     <span class="txt-rotate" data-period="2000" data-rotate='[ "Hello", "Ni Hao", "Hola", "Apa Khabar" ]'></span>
                 ,my <br>
                 name is <span class="important_text">Voon Tao</span>!
                 </h1>
                 <p>I am from <span class="important_text">Swinburne Sarawak</span>, and I am just finished my
-                Computer Science (Year 2 Sem 1) and waiting for my result. <br>
-                <span class="important_text"><strong>Familiar with the field</strong></span>: web development, OOP, MVC  <br>
+                Computer Science (Year 2 Sem 1) and waiting for my result. <br><br>
+                <span class="important_text"><strong>Familiar with the field</strong></span>: web development, OOP, MVC  <br><br>
                 <span class="important_text"><strong>Future direction</strong></span>: A software/mobile developer familiar with algorithms and AI.
                 </p>
             </div>
         </div>
 
         <div class="col-lg-6 vt_landing_img">
-            <div class="vt_circle">
+            <div class="vt_circle"  data-aos="fade-left">
                 <model-viewer src="imgs/scene.gltf" alt="hehe" auto-rotate="" camera-controls="" ar-status="not-presenting"></model-viewer>
             </div>
         </div>
@@ -97,111 +93,117 @@
   </div>
 
   <div id="section2" class="container-fluid py-5 vt_con2">
+    <div class="slide-container swiper">
+      <div class="slide-content">
+          <div class="card-wrapper swiper-wrapper" id="project-container">
+          </div>
+      </div>
 
-    <div class="row">
-        <div class="col-md">
-            <div class="card my-2" style="height: 100%;">
-                <img src="imgs/codecode.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-        </div>
-        <div class="col-md">
-            <div class="card my-2 " style="height: 100%;">
-                <img src="imgs/codecode.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-        </div>
-        <div class="col-md">
-            <div class="card my-2" style="height: 100%;">
-                <img src="imgs/codecode.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-        </div>
-        <div class="col-md">
-            <div class="card my-2" style="height: 100%;">
-                <img src="imgs/codecode.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example k of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-        </div>
-    </div>
-    
-    
+      <div class="swiper-button-next swiper-navBtn"></div>
+      <div class="swiper-button-prev swiper-navBtn"></div>
+      <div class="swiper-pagination"></div>
+  </div>
 
 </div>
 
-<div id="section3" class="container-fluid py-5">
+<div id="section3" class="container-fluid py-5 grey-color">
+  <div class="kanbanBg mx-5 p-5" id="kanbanContainer">
+    
+  </div>
+</div>
 
-    <form method="POST" class="form needs-validation p-3" novalidate action="mailto:tanvoontao0908@example.com" enctype="text/plain">
-        <h1 class="cust_info">Contact Form</h1>
+
+
+
+<div id="section4" class="container-fluid py-5 vt_con">
+<!-- https://formspree.io/f/xpzbeyyp -->
+<!-- mailto:tan@gmail.com -->
+    
+      <form
+      action="https://formspree.io/f/xpzbeyyp"
+      method="POST"
+      class="form needs-validation p-3"
+    >
+
+        <h1 class="cust_info" data-aos="fade-up">Contact Form</h1>
 
         
 
         <div class="row my-3">
-            <div class="col-md">
+            <div class="col-md" data-aos="fade-up">
                 <label for="name" class="form-label">Name</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class='bx bx-user'></i></span>
-                    <input type="text" class="form-control" id="name"  placeholder="Tan Voon Tao" maxlength="24" name="name">
+                    <input type="text" class="form-control" id="name"  placeholder="Tan Voon Tao" maxlength="24" name="name" required>
                 </div>
             </div>
-            <div class="col-md">
+            <div class="col-md" data-aos="fade-up">
                 <label for="email" class="form-label">E-mail</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class='bx bx-envelope'></i></span>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="example@gmail.com" >
+                    <input type="email" class="form-control" id="email" name="email" placeholder="example@gmail.com" required>
                 </div>
             </div>
-            <div class="col-md">
+            <div class="col-md" data-aos="fade-up">
                 <label for="sub" class="form-label">Subject</label>
                 <div class="input-group">
                     <span class="input-group-text">@</span>
-                    <input type="text" class="form-control" id="sub"  placeholder="">
+                    <input type="text" class="form-control" id="sub"  placeholder="" name="subject" required>
                 </div>
             </div>
         </div>
 
         <div class="row my-3">
             <div class="col-md">
-                <div class="input-group">
+                <div class="input-group" data-aos="fade-up">
                     <label for="sub" class="form-label">Messages</label>
                     <div class="input-group">
-                        <textarea class="form-control" aria-label="With textarea" rows="8" name="messages"></textarea>
+                        <textarea class="form-control" aria-label="With textarea" rows="8" name="messages" required></textarea>
                     </div>
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg btn-block payNow">
-            <i class='bx bx-send' ></i>Send
+        <button type="submit" class="btn btn-primary btn-lg btn-block payNow" data-aos="fade-up">
+            <i class='bx bx-send' ></i> 
+            Send
         </button>
     </form>
     
 
 </div>
 
+<img src="imgs/rocket2.gif" alt="rocket back-to-top icon" style="width:7.5%;" title="Go to top" onclick="topFunction()" id="myBtn">';
 
 
+<script>
+  $(window).on('load', function () {
+    $('#loading').hide();
+  }) 
+</script>
 
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000
+  });
+</script>
+
+<script src="js/printLinks.js"></script>
+<script src="js/printTranscript.js"></script>
+<script src="js/printProjects.js"></script>
+<script src="data/projects.js"></script>
+<script src="data/links.js"></script>
+<script src="data/grades.js"></script>
+
+<script src="js/swiper-bundle.min.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+<script src="js/script.js"></script>
 <script src="js/typing_animation.js"></script>
+<script src="js/btp.js"></script>
 
  </body>
  </html>
