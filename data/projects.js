@@ -24,6 +24,12 @@ printProject([
     "url": "https://github.com/tanvoontao/My-Friend-System"
     },
     {
+    "image": "imgs/projects/P5_SwinClubEventManagementApplication.png",
+    "title": "Swin Club Event Management Applications",
+    "description": "Android mobile application with notification system using Kotlin, Firebase Authentication, Firebase Realtime Database, and Firebase Cloud Messaging",
+    "url": "https://github.com/tanvoontao/SwinClubEventManagementSystem"
+    },
+    {
     "image": "imgs/codecode.jpg",
     "title": "card title",
     "description": "fbewuifb bfre irgb geruig erg iu reigio",
